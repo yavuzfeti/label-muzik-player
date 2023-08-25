@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#222222"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/action_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#333333"
+        android:gravity="center"
+        android:text="MÜZİK PLAYER"
+        android:textColor="#FFFFFF"
+        android:textSize="40sp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:cacheColorHint="#222222"
+        app:layout_constraintBottom_toTopOf="@+id/sarki_ismi"
+        app:layout_constraintTop_toBottomOf="@+id/action_bar"
+        tools:layout_editor_absoluteX="-43dp"></ListView>
+
+    <LinearLayout
+        android:id="@+id/butonlar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/onceki"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#333333"
+            android:onClick="onceki"
+            android:text="Önceki"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#333333"
+            android:onClick="play"
+            android:text="Oynat"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/sonraki"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#333333"
+            android:onClick="sonraki"
+            android:text="Sonraki"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/guncel_sure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="0:00"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/sarki_ismi"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/son_sure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="0:00"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/sarki_ismi"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/sarki_ismi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#333333"
+        android:gravity="center"
+        android:text="Şarkı ismi"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/seek_bar"
+        tools:layout_editor_absoluteX="105dp" />
+
+    <SeekBar
+        android:id="@+id/seek_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/butonlar"
+        tools:layout_editor_absoluteX="-28dp" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#333333"
+        android:onClick="yenile"
+        android:text="Yenile"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/sarki_ismi"
+        app:layout_constraintEnd_toStartOf="@+id/son_sure"
+        app:layout_constraintStart_toEndOf="@+id/guncel_sure" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
